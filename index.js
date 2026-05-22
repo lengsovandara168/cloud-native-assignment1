@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 
 app.use(express.json());
-
+let registeredUsers = [];
 // 1. Registration service - POST method
 app.post("/api/register", (req, res) => {
   res
