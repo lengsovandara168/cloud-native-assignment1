@@ -4,8 +4,13 @@ const port = 3000;
 
 app.use(express.json());
 let registeredUsers = [];
-// 1. Registration service - POST method
 app.post("/api/register", (req, res) => {
+  // Add the new user to the array
+  registeredUsers.push(req.body);
+
+  // Print the array to the terminal so it matches the screenshot!
+  console.log("Registered users:", registeredUsers);
+
   res
     .status(201)
     .json({ message: "User registered successfully", data: req.body });
